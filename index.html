@@ -23,7 +23,8 @@
         <a href="#pipeline">Pipeline</a>
         <a href="#fusion">Fusion Methods</a>
         <a href="#results">Results</a>
-        <a href="#artifacts">Artifacts</a>
+        <a href="#advisor">Advisor</a>
+        <a href="#credits">Credits</a>
       </nav>
 
       <button class="menu-button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
@@ -36,7 +37,8 @@
       <a href="#pipeline">Pipeline</a>
       <a href="#fusion">Fusion Methods</a>
       <a href="#results">Results</a>
-      <a href="#artifacts">Artifacts</a>
+      <a href="#advisor">Advisor</a>
+      <a href="#credits">Credits</a>
     </nav>
   </header>
 
@@ -49,8 +51,8 @@
           <p class="hero-text">
             This project compares RGB-only, thermal-only, OR late fusion, Product-of-Experts,
             and intermediate feature fusion models for wildfire detection. The goal is to make
-            detection more reliable when smoke, low visibility, or hot clutter make a single
-            sensor unreliable on its own.
+            wildfire detection more reliable when smoke, low visibility, or hot clutter make a
+            single sensor unreliable on its own.
           </p>
 
           <div class="hero-actions">
@@ -87,11 +89,55 @@
             Strongest headline result: mid-fusion achieved <strong>90.83% accuracy</strong> and
             <strong>94.32% F1</strong> on the 109-sample FLAME3 eval-only set.
           </div>
-          <div class="advisor-banner">
-            <span class="advisor-label">Faculty Advisor</span>
-            <strong>Marzieh Amini</strong>
-          </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="section advisor-section" id="advisor">
+      <div class="container">
+        <article class="advisor-feature">
+          <div>
+            <p class="eyebrow">Advisor</p>
+            <h2>Faculty Advisor: Marzieh Amini</h2>
+            <p class="section-text">
+              This capstone project was completed under the guidance of <strong>Marzieh Amini</strong>.
+            </p>
+          </div>
+          <div class="advisor-side-note">
+            <span class="advisor-label">Project Guidance</span>
+            <p>
+              Multimodal wildfire detection using paired RGB and thermal imagery, with direct
+              comparison between single-modality models, late fusion, Product-of-Experts, and
+              intermediate feature fusion.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section credits-section" id="credits">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Credits</p>
+          <h2>Project Team</h2>
+          <p class="section-text">
+            This capstone project was produced by the student team below.
+          </p>
+        </div>
+
+        <div class="credits-grid">
+          <article class="surface-card credit-card">
+            <span class="credit-role">Project Team</span>
+            <h3>Oje Udobi</h3>
+            <p>Capstone project contributor and co-creator.</p>
+          </article>
+
+          <article class="surface-card credit-card">
+            <span class="credit-role">Project Team</span>
+            <h3>Ziyan Huang</h3>
+            <p>Capstone project contributor and co-creator.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -123,7 +169,7 @@
             <h3>Fusion objective</h3>
             <p>
               The capstone asks whether combining both modalities can improve robustness without
-              giving up too much recall, precision, or balanced accuracy.
+              sacrificing precision, recall, or balanced accuracy.
             </p>
           </article>
         </div>
@@ -342,58 +388,6 @@
       </div>
     </section>
 
-    <section class="section alt-section" id="artifacts">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Artifacts</p>
-          <h2>What is included in the capstone folder</h2>
-        </div>
-
-        <article class="surface-card callout-card advisor-card">
-          <h3>Project Advisor</h3>
-          <p>
-            This capstone project was completed under the guidance of
-            <strong>Marzieh Amini</strong>, the project advisor.
-          </p>
-        </article>
-
-        <div class="three-up">
-          <article class="surface-card">
-            <h3>MidFusion_Package</h3>
-            <p>
-              Contains the learned feature-fusion checkpoint, ordered scripts, bundled test data,
-              and evaluation outputs used for the best-performing fusion method on this website.
-            </p>
-          </article>
-
-          <article class="surface-card">
-            <h3>OR_Fusion_package</h3>
-            <p>
-              Contains the thresholded OR late-fusion baseline, frozen runtime configuration, and
-              the packaged evaluation entry point for the portable smoke-test bundle.
-            </p>
-          </article>
-
-          <article class="surface-card">
-            <h3>POE_Fusion_Package</h3>
-            <p>
-              Contains the Product-of-Experts implementation, comparison reports against the late
-              fusion baseline, and the packaged FLAME3 smoke-test evaluation results.
-            </p>
-          </article>
-        </div>
-
-        <article class="surface-card callout-card">
-          <h3>Good next additions for the final capstone version</h3>
-          <ul class="snapshot-list compact-list">
-            <li>Add final poster PDF, abstract PDF, and a short demo video if you have them</li>
-            <li>Replace or expand the team section with names, roles, and supervisor information</li>
-            <li>Add a short methods timeline or workflow diagram for the full project process</li>
-            <li>Publish the `website` folder to GitHub Pages once the final assets are ready</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
