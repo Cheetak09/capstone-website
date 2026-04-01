@@ -20,11 +20,13 @@
 
       <nav class="desktop-nav" aria-label="Primary">
         <a href="#overview">Overview</a>
+        <a href="#technology">Technology</a>
+        <a href="#datasets">Datasets</a>
         <a href="#pipeline">Pipeline</a>
-        <a href="#fusion">Fusion Methods</a>
+        <a href="#fusion">Fusion</a>
         <a href="#results">Results</a>
-        <a href="#advisor">Advisor</a>
-        <a href="#credits">Credits</a>
+        <a href="#team">Team</a>
+        <a href="#references">References</a>
       </nav>
 
       <button class="menu-button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
@@ -34,11 +36,13 @@
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
       <a href="#overview">Overview</a>
+      <a href="#technology">Technology</a>
+      <a href="#datasets">Datasets</a>
       <a href="#pipeline">Pipeline</a>
-      <a href="#fusion">Fusion Methods</a>
+      <a href="#fusion">Fusion</a>
       <a href="#results">Results</a>
-      <a href="#advisor">Advisor</a>
-      <a href="#credits">Credits</a>
+      <a href="#team">Team</a>
+      <a href="#references">References</a>
     </nav>
   </header>
 
@@ -57,7 +61,7 @@
 
           <div class="hero-actions">
             <a class="button button-primary" href="#results">See Final Results</a>
-            <a class="button button-secondary" href="#fusion">Compare Fusion Methods</a>
+            <a class="button button-secondary" href="#technology">Project Technology</a>
           </div>
 
           <div class="hero-stats">
@@ -80,64 +84,16 @@
           <p class="panel-kicker">Project Snapshot</p>
           <h2>What the capstone demonstrates</h2>
           <ul class="snapshot-list">
-            <li>Separate RGB and thermal YOLO-based detectors for complementary signals</li>
-            <li>Late-fusion and feature-fusion designs evaluated on the same FLAME3 bundle</li>
-            <li>Real comparison metrics, diagrams, and sample outputs bundled inside this site</li>
-            <li>Threshold tuning evidence for the intermediate fusion model on a larger holdout split</li>
+            <li>Separate RGB and thermal YOLO11-based branches for complementary wildfire cues</li>
+            <li>Direct comparison between single-modality, OR late fusion, PoE, and mid-fusion methods</li>
+            <li>Shared FLAME3-based evaluation for fair comparison across all approaches</li>
+            <li>Packaged results, figures, datasets, and training resources collected in one website</li>
           </ul>
           <div class="hero-note">
             Strongest headline result: mid-fusion achieved <strong>90.83% accuracy</strong> and
             <strong>94.32% F1</strong> on the 109-sample FLAME3 eval-only set.
           </div>
         </aside>
-      </div>
-    </section>
-
-    <section class="section advisor-section" id="advisor">
-      <div class="container">
-        <article class="advisor-feature">
-          <div>
-            <p class="eyebrow">Advisor</p>
-            <h2>Faculty Advisor: Marzieh Amini</h2>
-            <p class="section-text">
-              This capstone project was completed under the guidance of <strong>Marzieh Amini</strong>.
-            </p>
-          </div>
-          <div class="advisor-side-note">
-            <span class="advisor-label">Project Guidance</span>
-            <p>
-              Multimodal wildfire detection using paired RGB and thermal imagery, with direct
-              comparison between single-modality models, late fusion, Product-of-Experts, and
-              intermediate feature fusion.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section credits-section" id="credits">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Credits</p>
-          <h2>Project Team</h2>
-          <p class="section-text">
-            This capstone project was produced by the student team below.
-          </p>
-        </div>
-
-        <div class="credits-grid">
-          <article class="surface-card credit-card">
-            <span class="credit-role">Project Team</span>
-            <h3>Oje Udobi</h3>
-            <p>Capstone project contributor and co-creator.</p>
-          </article>
-
-          <article class="surface-card credit-card">
-            <span class="credit-role">Project Team</span>
-            <h3>Ziyan Huang</h3>
-            <p>Capstone project contributor and co-creator.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -189,6 +145,118 @@
               The learned mid-fusion model was trained with a larger RGBT split containing
               <strong>2526 train</strong>, <strong>170 validation</strong>, and
               <strong>518 test</strong> samples before being evaluated on FLAME3.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="technology">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Technology</p>
+          <h2>Training hardware, model stack, and implementation resources</h2>
+          <p class="section-text">
+            The project combines local training hardware, the YOLO11 model family, and a separate
+            public code repository for training and fusion experiments.
+          </p>
+        </div>
+
+        <div class="tech-grid">
+          <article class="surface-card tech-card tech-card-wide">
+            <img class="tech-image" src="assets/laptop.png" alt="Training laptop used for the project" />
+            <div class="tech-body">
+              <span class="credit-role">Training Hardware</span>
+              <h3>Laptop with RTX 4070 GPU</h3>
+              <p>
+                The project was trained on a laptop with an NVIDIA RTX 4070 GPU. This setup gave
+                us access to <strong>8GB of VRAM</strong> and at least
+                <strong>32GB of system RAM</strong> for training, evaluation, and multimodal fusion experiments.
+              </p>
+            </div>
+          </article>
+
+          <article class="surface-card tech-card">
+            <span class="credit-role">Model Family</span>
+            <h3>YOLO11</h3>
+            <p>
+              YOLO11 was used as the core detection backbone for both the RGB and thermal branches.
+              It provides a practical transfer-learning base for wildfire detection experiments.
+            </p>
+            <p>
+              <a class="inline-link" href="https://docs.ultralytics.com/models/yolo11/" target="_blank" rel="noreferrer">YOLO11 documentation</a>
+            </p>
+          </article>
+
+          <article class="surface-card tech-card">
+            <span class="credit-role">Model Roadmap</span>
+            <h3>How YOLO11 fits this project</h3>
+            <p>
+              1. Start with pretrained YOLO11 detectors.<br />
+              2. Train RGB and thermal branches independently.<br />
+              3. Compare single-modality predictions with late fusion and learned fusion.<br />
+              4. Evaluate all approaches on the same FLAME3-based test set.
+            </p>
+          </article>
+
+          <article class="surface-card tech-card">
+            <span class="credit-role">Code Repository</span>
+            <h3>Training and Fusion Code</h3>
+            <p>
+              The training and fusion implementation is documented in the public GitHub repository below.
+            </p>
+            <p>
+              <a class="inline-link" href="https://github.com/UMP45ISTHEBEST/wildfire-detection-rgb-thermal-fusion" target="_blank" rel="noreferrer">wildfire-detection-rgb-thermal-fusion on GitHub</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="datasets">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Datasets</p>
+          <h2>Datasets used for RGB, thermal, and evaluation experiments</h2>
+          <p class="section-text">
+            The project combines public RGB and thermal wildfire data with FLAME3-based evaluation material.
+          </p>
+        </div>
+
+        <div class="dataset-grid">
+          <article class="surface-card dataset-card">
+            <span class="credit-role">RGB Dataset</span>
+            <h3>FLAME 3 RGB Imagery</h3>
+            <p>
+              The RGB side of the project draws from the FLAME 3 research dataset, a UAV wildfire
+              management dataset that provides field imagery useful for smoke and flame analysis.
+            </p>
+            <p>
+              <a class="inline-link" href="https://etsin.fairdata.fi/dataset/1dce1023-493a-4d63-a906-f2a44f831898/data" target="_blank" rel="noreferrer">Open RGB dataset</a>
+            </p>
+          </article>
+
+          <article class="surface-card dataset-card">
+            <span class="credit-role">Thermal Dataset</span>
+            <h3>RGB-Thermal Forest Fire Dataset</h3>
+            <p>
+              The thermal branch uses the Roboflow-hosted RGB-Thermal Forest Fire dataset, which
+              supports paired multimodal wildfire training and comparison.
+            </p>
+            <p>
+              <a class="inline-link" href="https://universe.roboflow.com/forest-fire-dataset/rgb-thermal-forest-fire/dataset/9" target="_blank" rel="noreferrer">Open thermal dataset</a>
+            </p>
+          </article>
+
+          <article class="surface-card dataset-card">
+            <span class="credit-role">Test Dataset</span>
+            <h3>FLAME3-Based Evaluation Set</h3>
+            <p>
+              The final comparison presented on this site uses a FLAME3-based independent test bundle
+              so the RGB, thermal, late-fusion, PoE, and mid-fusion models are judged on the same set.
+            </p>
+            <p>
+              <a class="inline-link" href="https://universe.roboflow.com/forest-fire-dataset/rgb-thermal-forest-fire/dataset/9" target="_blank" rel="noreferrer">Evaluation dataset source</a>
             </p>
           </article>
         </div>
@@ -350,7 +418,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="examples">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Examples</p>
@@ -388,6 +456,96 @@
       </div>
     </section>
 
+    <section class="section alt-section" id="team">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Team</p>
+          <h2>Contributors and advisor</h2>
+          <p class="section-text">
+            This capstone project was produced by the student contributors below, under faculty supervision.
+          </p>
+        </div>
+
+        <div class="credits-grid credits-grid-three">
+          <article class="surface-card credit-card">
+            <span class="credit-role">Project Team</span>
+            <h3>Oje Udobi</h3>
+            <p>Capstone project contributor and co-creator.</p>
+          </article>
+
+          <article class="surface-card credit-card">
+            <span class="credit-role">Project Team</span>
+            <h3>Ziyan Huang</h3>
+            <p>Capstone project contributor and co-creator.</p>
+          </article>
+
+          <article class="surface-card credit-card">
+            <span class="credit-role">Project Team</span>
+            <h3>Ara Esho</h3>
+            <p>Capstone project contributor and presentation collaborator.</p>
+          </article>
+        </div>
+
+        <article class="advisor-feature advisor-feature-compact">
+          <div>
+            <p class="eyebrow">Advisor</p>
+            <h3>Marzieh Amini</h3>
+            <p class="section-text">Faculty advisor for the capstone project.</p>
+          </div>
+          <div class="advisor-side-note">
+            <span class="advisor-label">Project Scope</span>
+            <p>
+              Multimodal wildfire detection using RGB and thermal imagery, with fair comparison
+              across YOLO11-based single-modality and fusion methods.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">References</p>
+          <h2>Datasets, model sources, and literature</h2>
+        </div>
+
+        <div class="references-card">
+          <p>
+            "Flame 3 - Radiometric Thermal UAV Imagery for Wildfire Management."
+            <a class="inline-link" href="https://ieee-dataport.org/open-access/flame-3-radiometric-thermal-uav-imagery-wildfire-management" target="_blank" rel="noreferrer">IEEE DataPort</a>.
+          </p>
+          <p>
+            Kularatne, Windula, et al. "Fireman-UAV-RGBT."
+            <a class="inline-link" href="https://zenodo.org/records/13732947" target="_blank" rel="noreferrer">Zenodo</a>, 9 Sept. 2024.
+          </p>
+          <p>
+            Liang, Enqiang, et al. "Object Detection Model of Vehicle-Road Cooperative Autonomous Driving Based on Improved Yolo11 Algorithm."
+            <a class="inline-link" href="https://www.nature.com/articles/s41598-025-18263-9" target="_blank" rel="noreferrer">Scientific Reports</a>, 2 Sept. 2025.
+          </p>
+          <p>
+            "Participating in an International Robot Contest as a Way to Develop Professional Skills in Engineering Students."
+            <a class="inline-link" href="https://ieeexplore.ieee.org/abstract/document/4720351/" target="_blank" rel="noreferrer">IEEE Xplore</a>.
+          </p>
+          <p>
+            "Research Dataset Finder."
+            <a class="inline-link" href="https://etsin.fairdata.fi/dataset/1dce1023-493a-4d63-a906-f2a44f831898/data" target="_blank" rel="noreferrer">Etsin</a>.
+          </p>
+          <p>
+            "Top Forest Datasets and Models."
+            <a class="inline-link" href="https://universe.roboflow.com/search?q=class:forest+fire" target="_blank" rel="noreferrer">Roboflow Universe</a>.
+          </p>
+          <p>
+            Zhang, Yalin, et al. "A UAV-Based Multi-Scenario RGB-Thermal Dataset and Fusion Model for Enhanced Forest Fire Detection."
+            <a class="inline-link" href="https://www.mdpi.com/2072-4292/17/15/2593" target="_blank" rel="noreferrer">Remote Sensing</a>, 25 July 2025.
+          </p>
+          <p>
+            "YOLO11."
+            <a class="inline-link" href="https://docs.ultralytics.com/models/yolo11/" target="_blank" rel="noreferrer">Ultralytics Documentation</a>.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

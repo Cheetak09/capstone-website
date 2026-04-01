@@ -246,6 +246,8 @@ h3 {
 .three-up,
 .info-grid,
 .results-grid,
+.tech-grid,
+.dataset-grid,
 .gallery-grid,
 .figure-grid,
 .pipeline-grid,
@@ -360,6 +362,45 @@ h3 {
   padding: 24px;
 }
 
+.tech-grid,
+.dataset-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tech-card,
+.dataset-card {
+  height: 100%;
+}
+
+.tech-card-wide {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.tech-image {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.tech-body {
+  min-width: 0;
+}
+
+.inline-link {
+  color: var(--success);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 214, 165, 0.35);
+}
+
+.inline-link:hover,
+.inline-link:focus-visible {
+  color: var(--text);
+  border-bottom-color: rgba(255, 245, 237, 0.7);
+}
+
 .credits-section {
   padding-top: 18px;
 }
@@ -368,6 +409,10 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+}
+
+.credits-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .credit-card {
@@ -411,6 +456,10 @@ h3 {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.advisor-feature-compact {
+  margin-top: 18px;
 }
 
 .pipeline-grid {
@@ -554,6 +603,26 @@ h3 {
   color: var(--muted);
 }
 
+.references-card {
+  padding: 22px 24px;
+  background: rgba(39, 23, 17, 0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.references-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.references-card p + p {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 188, 120, 0.1);
+}
+
 .callout-card {
   margin-top: 18px;
   background: var(--surface-strong);
@@ -579,6 +648,8 @@ h3 {
   .three-up,
   .method-grid,
   .results-grid,
+  .tech-grid,
+  .dataset-grid,
   .pipeline-grid,
   .advisor-feature,
   .credits-grid,
@@ -591,6 +662,10 @@ h3 {
   }
 
   .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-card-wide {
     grid-template-columns: 1fr;
   }
 }
@@ -615,7 +690,8 @@ h3 {
   .surface-card,
   .hero-panel,
   .result-card,
-  .method-body {
+  .method-body,
+  .references-card {
     padding: 20px;
   }
 
